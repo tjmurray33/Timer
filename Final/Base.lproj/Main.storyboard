@@ -18,9 +18,104 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="timerLabel" destination="PYT-55-dBC" id="B0k-f1-CV2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="22" y="301"/>
+        </scene>
+        <!--Count Down View Controller-->
+        <scene sceneID="OmW-5d-2gl">
+            <objects>
+                <viewController id="leb-Bb-pML" customClass="countDownViewController" customModule="Final" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ed8-UG-z4F"/>
+                        <viewControllerLayoutGuide type="bottom" id="a9F-Wz-73I"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4jF-tC-SkM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUN-aJ-67I">
+                                <rect key="frame" x="20" y="0.0" width="560" height="180"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="150"/>
+                                <color key="textColor" red="0.16867976840000001" green="0.169836451" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sq-vB-eEN">
+                                <rect key="frame" x="220" y="200" width="160" height="77"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="startButton:" destination="leb-Bb-pML" eventType="touchUpInside" id="w67-Y1-p1p"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xmD-fJ-I9p">
+                                <rect key="frame" x="212" y="346" width="172" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="Restart">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="restartButton:" destination="leb-Bb-pML" eventType="touchUpInside" id="fNt-Wo-T5C"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input TIme" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G52-fy-1mm">
+                                <rect key="frame" x="217" y="170" width="167" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1T-8Y-mwJ">
+                                <rect key="frame" x="251" y="274" width="98" height="52"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="Stop">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopButton:" destination="leb-Bb-pML" eventType="touchUpInside" id="gSf-K3-adP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aif-Eh-IHG">
+                                <rect key="frame" x="192" y="434" width="217" height="83"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Count Up Timer">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="X3Y-jG-CBd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NUN-aJ-67I" firstAttribute="centerX" secondItem="4jF-tC-SkM" secondAttribute="centerX" id="CQh-aL-A98"/>
+                            <constraint firstItem="7sq-vB-eEN" firstAttribute="centerX" secondItem="4jF-tC-SkM" secondAttribute="centerX" id="TDz-oM-4Pi"/>
+                            <constraint firstItem="Aif-Eh-IHG" firstAttribute="centerX" secondItem="4jF-tC-SkM" secondAttribute="centerX" id="ccI-Gf-oRE"/>
+                            <constraint firstItem="c1T-8Y-mwJ" firstAttribute="centerX" secondItem="4jF-tC-SkM" secondAttribute="centerX" id="e3m-xc-RIS"/>
+                            <constraint firstItem="G52-fy-1mm" firstAttribute="centerX" secondItem="4jF-tC-SkM" secondAttribute="centerX" id="mpT-z1-hGJ"/>
+                            <constraint firstItem="xmD-fJ-I9p" firstAttribute="centerX" secondItem="4jF-tC-SkM" secondAttribute="centerX" constant="-8" id="wXW-wr-w3s"/>
+                            <constraint firstItem="xmD-fJ-I9p" firstAttribute="top" secondItem="c1T-8Y-mwJ" secondAttribute="bottom" constant="25" id="xkX-b8-gm0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="changeLabel" destination="G52-fy-1mm" id="pXf-xV-gml"/>
+                        <outlet property="timerLabel" destination="NUN-aJ-67I" id="5ry-Vv-7px"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vxx-En-Ac4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="690" y="301"/>
         </scene>
     </scenes>
 </document>
